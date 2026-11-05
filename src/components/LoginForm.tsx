@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Building2, KeyRound, Mail, AlertCircle, ArrowRight, UserCheck } from 'lucide-react';
+import { Building2, KeyRound, Mail, AlertCircle, ArrowRight } from 'lucide-react';
 
 export const LoginForm: React.FC = () => {
   const { signIn } = useAuth();
@@ -22,12 +22,6 @@ export const LoginForm: React.FC = () => {
       setError(res.error.message || 'Ошибка авторизации. Проверьте учетные данные.');
     }
     setLoading(false);
-  };
-
-  const handleQuickLogin = (demoEmail: string) => {
-    setEmail(demoEmail);
-    setPassword('Pass123456!');
-    setError(null);
   };
 
   return (
